@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.nettihpk</groupId>
+    <groupId>org.vaadin.example</groupId>
     <artifactId>plainundertow</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
@@ -32,13 +32,14 @@
                 </exclusion>
             </exclusions>
         </dependency>
-        <!--Using dawn instead of core themes for smallest possible Valo theme-->
-        <dependency>
+        <!-- Using dawn instead of core themes for smallest possible Valo theme-->
+        <!-- And not even serving from app server but from http://virit.in/, see MainClazz  -->
+<!--        <dependency>
             <groupId>org.peimari</groupId>
             <artifactId>dawn</artifactId>
             <version>11</version>
-        </dependency>
-        <!-- Using widgetset from CDN to minimise the jar file -->
+        </dependency>-->
+        <!-- Using widgetset from CDN to minimise the jar file, no need for largish vaadin-client-compiled, but still can use all add-ons -->
         <!--        <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>vaadin-client-compiled</artifactId>
@@ -83,6 +84,8 @@
                                     <artifact>*:*</artifact>
                                     <excludes>
                                         <exclude>com/google/**</exclude>
+                                        <exclude>img/**</exclude>
+                                        <exclude>css/**</exclude>
                                         <exclude>**/*.java</exclude>
                                         <exclude>**/*.scss</exclude>
                                     </excludes>

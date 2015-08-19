@@ -27,7 +27,8 @@ public class MainClazz {
                                 .setContextPath("/")
                                 .setDeploymentName("vaadin")
                                 .addServlets(new ServletInfo("vaadin", MyServlet.class)
-                                        .addMapping("/*"))
+                                        .addMapping("/*")
+                                .addInitParam("Resources", "http://virit.in/dawn/11"))
                                 .addListeners(new ListenerInfo(in.virit.WidgetSet.class))
                                 )
                 ;
